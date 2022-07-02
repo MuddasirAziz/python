@@ -1,0 +1,42 @@
+import math
+User_input = input("ENTER YOUR CARD NUMBER: ")
+total = 0
+
+if len(User_input) == 16:
+    print("You have Master Card")
+    
+    Slice_data1 =User_input[0:4]
+    Slice_data2 =User_input[4:8]
+    Slice_data3 =User_input[8:12]
+    Slice_data4 =User_input[12:16]
+    
+    print(Slice_data1,Slice_data2,Slice_data3,Slice_data4)
+    
+    sum1 = int(User_input[0])*2 + int(User_input[2])*2
+    sum2 = int(User_input[4])*2 + int(User_input[6])*2
+    sum3 = int(User_input[8])*2+ int(User_input[10])*2
+    sum4 = int(User_input[12])*2+ int(User_input[14])*2
+    
+    total= sum1 + sum2 + sum3 + sum4 
+    
+    for i in range(1,14,2):
+        
+        total =total + int(User_input[i])
+       
+    print(total)
+    
+    Last_digit = str(total)
+ 
+    if (int(Last_digit[-1]) == 0):
+       
+       print("VALID CARD")
+    
+    else:
+        print("INVALID CARD")
+        print("Invalid Card \nReason Last Digit is: ",Last_digit[-1])
+    
+elif len(User_input) ==13 or len(User_input) == 17:
+    print("You have Visa Card")
+    
+else:
+    print('Not valid entry')
